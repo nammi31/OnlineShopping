@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Login</title>
+  <link rel="icon" href="img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
+  <!-- <link rel="stylesheet" href="css/homeLubna.1.css">
+  <link rel="stylesheet" href="css/styleLubna.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!--================ Start Header Menu Area =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.jpg" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Shop</a>
+                <ul class="dropdown-menu">
+                  <!-- <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Order tracking</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="profile.html">profile</a></li>
+            </ul>
+
+            <ul class="nav-shop">
+              <li class="nav-item"><button><a class="ti-shopping-cart" href="cart.html"></a><span
+                    class="nav-shop__circle">3</span></button> </li>
+              <li class="nav-item"><a class="button button-header" href="products.html">Buy Now</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================ End Header Menu Area =================-->
+
+  <!-- ================ start banner area ================= -->
+  <!-- ================ end banner area ================= -->
+
+  <!--================Login Box Area =================-->
+  <section class="login_box_area section-margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="login_box_img">
+            <div class="hover">
+              <h4>Already have an account?</h4>
+              <a class="button button-account" href="login.html">Login Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="login_form_inner register_form_inner">
+            <h3>Create an account</h3>
+
+
+            <!--create an account model-->
+            <div class="modal fade" id="myAccountModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add account info</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button> -->
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" onClick="" class="btn btn-default">submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="row login_form" id="register_form">
+
+              <div class="col-md-12 form-group">
+                <input type="text" name="email" class="form-control" id="email" placeholder="Email Address"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+              </div>
+
+              <div class="col-md-12 form-group">
+
+              </div>
+              <div class="col-md-12 form-group">
+                <div class="text-center">
+                  <button type="submit" value="submit" class="button button-register w-100"
+                    href="addAccountInfo.html">Register</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--================End Login Box Area =================-->
+
+
+
+  <!--================ Start footer Area  =================-->
+
+  <!--================ End footer Area  =================-->
+
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

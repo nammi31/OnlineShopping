@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Login</title>
+  <link rel="icon" href="img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="font-size:20px; ">
+  <!--================ Start Header Menu Area =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h"><img src="img/logo1(1).jpg" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Shop</a>
+                <ul class="dropdown-menu">
+                  <!-- <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li> -->
+                  <!-- <li class="nav-item"><a class="nav-link" href="/confirm">Confirmation</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="/cart">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/tracking">Order tracking</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item"><a class="nav-link" href="/loginPage">Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+            </ul>
+
+            <ul class="nav-shop">
+              <li class="nav-item"><button><a class="ti-shopping-cart" href="/cart"></a><span
+                    class="nav-shop__circle">3</span></button> </li>
+              <li class="nav-item"><a class="button button-header" href="/products">Buy Now</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+
+    <!-- ================ trending product section start ================= -->
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="row">
+          <%
+            var CntItem = Object.keys(prods).length;
+            for(let i=0; i<CntItem; i++) {
+             %>
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="card text-center card-product" style="background: rgb(185, 216, 223)">
+              <div class="card-product__img">
+                <img class="card-img" src="<%= prods[i].url %>" alt="prods[i].name">
+                <ul class="card-product__imgOverlay">
+                  <li><button><a class="ti-shopping-cart"></a></button></li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <!--add to cart form-->
+                <form action="/addToCart2" method="post">
+                  <input type="hidden" name="productId" value="<%= prods[i].id %>">
+                  <input type="hidden" name="quantity" value="1">
+
+                  <input type="submit" class="btn btn-info" value="<%= prods[i].name%>"></input>
+                  <p class="card-product"> Discount:<%= prods[i].discount%></p>
+                  <p class="card-product__price">Price: $<%= prods[i].price%></p>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% } %>
+    </section>
+    <!-- ================ trending product section end ================= -->
+
+
+    <!-- ================ offer section start ================= -->
+
+
+  </main>
+
+
+  <!--================ Start footer Area  =================-->
+
+  <!--================ End footer Area  =================-->
+
+
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

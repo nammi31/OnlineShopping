@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomePage</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+   <link href="/css/home.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #eff5f5">
+<header>
+   	<h1>Buy something</h1>
+	<nav>
+
+		<ul id="nav">
+			<li> <a class = "homered" href="#">Home</a></li>
+			<li> <a class = "homeblack" href="/moveToCartPage">Cart</a></li>
+			<li> <a class="homeblack" href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+</header>
+  <body>
+
+
+      <%
+      var cartSize = Object.keys(cartProducts).length;
+      var prodsSize = Object.keys(prods).length;
+      for(let i=0; i<cartSize; i++) {
+            for(let j=0;j<prodsSize;j++){
+              if(cartProducts[i].productId == prods[j].id){
+                var totalPrice = prods[j].price*cartProducts[i].quantity
+      %>
+                <div class="form2">
+                    <form action="/removeFromCart" method="post">
+                              <div class="gallery">
+                              <img src="<%= prods[j].url %>" alt="<%=prods[j].name%>" width="200px" height="150px" >
+                              <div class="desc">Name:<%=prods[j].name%><br>Total Price:$<%=totalPrice %><br>Quantity: <%=cartProducts[i].quantity%></div>
+                              <input type="hidden" name="productId" value="<%= cartProducts[i].productId %>"  >
+                              <input type="hidden" name="price" value="<%= prods[j].price %>"  >
+                              <input type="number" name="quantity" value="<%=cartProducts[i].quantity%>" min="1" max="<%=cartProducts[i].quantity%>" >
+
+                              <input type="submit" value="remove from cart" style="background:#149576;color:white;">
+                              </div>
+                    </form>
+                </div>
+         <%   }
+            }
+       }
+     %>
+
+<div class="form3">
+   <p style="text-align:center;">Total cost: <%=cost%></p>
+   <form action="/placeOrder" method="post">
+
+   <input type="hidden" name="userId" value="<%= userId %>" >
+   <input type="hidden" name="t_cost" value="<%=cost%>" >
+   
+   <button type="submit" style="background:white;color:black;">place order</button>
+   </form>
+   </div>
+  </body>
+</html>
